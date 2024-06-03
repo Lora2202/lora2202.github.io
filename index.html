@@ -3,61 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odliczanie do wybranej daty</title>
+    <title>AstroCountdown</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #0d0d2b;
+            color: #ffffff;
+        }
+        header {
+            background-color: #1c1c3c;
+            padding: 20px;
+            text-align: center;
         }
         .container {
-            text-align: center;
-            background-color: #fff;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .event {
+            background-color: #1c1c3c;
+            margin: 20px 0;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        input, button {
-            margin: 10px 0;
-            padding: 10px;
-            font-size: 16px;
+        .event img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
-        #countdown {
+        .event h2 {
+            color: #ffd700;
+        }
+        .countdown {
             font-size: 24px;
-            margin-top: 20px;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .event img {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>AstroCountdown</h1>
+        <p>Odliczanie do najbliższych wydarzeń astronomicznych</p>
+    </header>
     <div class="container">
-        <h1>Odliczanie do wybranej daty</h1>
-        <input type="datetime-local" id="datetime-picker">
-        <button onclick="startCountdown()">Start</button>
-        <div id="countdown">Wprowadź datę i godzinę</div>
+        <div class="event">
+            <h2>04-09-2024: Wybuch nowej T Coronae Borealis</h2>
+            <img src="https://example.com/t-coronae-borealis.jpg" alt="T Coronae Borealis">
+            <p>W ciągu najbliższych miesięcy na niebie pojawi się jeszcze jedna „gwiazda”. W rzeczywistości będzie to bardzo rzadki wybuch nowej T Coronae Borealis. Jasny obiekt przez kilka dni da się obserwować gołym okiem. Ostatni raz stało się to w 1946 roku. Naukowcy przewidują, że po raz kolejny zobaczymy tę nową w najbliższych miesiącach: do września 2024 r.</p>
+            <p>T Coronae Borealis to dwie gwiazdy odległe od Ziemi o 3 tys. lat świetlnych. Jedna z nich to czerwony olbrzym, druga – biały karzeł. Zazwyczaj ich jasność wynosi magnitudo 10. To oznacza, że bez wsparcia technologii nie możemy ich zobaczyć. Jednak gdy się rozświetlą, wówczas ich jasność powiększy się i osiągnie magnitudo 2. Im niższe magnitudo, tym gwiazda jest jaśniejsza. Słońce ma magnitudo minus 26.</p>
+            <p>Kiedy jej jasność wystrzeli, T Coronae Borealis będzie przez kilka dni widoczna gołym okiem. Zaś przez około tydzień przez lornetkę. Później znowu zgaśnie, prawdopodobnie na następne 80 lat. To oznacza, że okazji zobaczenia tej szczególnej nowej lepiej nie zmarnować. Gdzie jej szukać? Między Wolarzem a Herkulesem, w gwiazdozbiorze Korony Północnej. Ta niewielka konstelacja gwiazd tworzy łuk w kształcie diademu.</p>
+            <div class="countdown" id="countdown1"></div>
+        </div>
+
+        <div class="event">
+            <h2>03-06-2024: Koniunkcja sześciu planet Układu Słonecznego</h2>
+            <img src="https://example.com/planetary-conjunction.jpg" alt="Planetary Conjunction">
+            <p>Koniunkcja aż sześciu planet Układu Słonecznego będzie miała miejsce w czerwcu 2024! Na tak niezwykłe zjawisko czeka się latami. Na niebie w jednej linii ustawią się Merkury, Mars, Jowisz, Saturn, Uran i Neptun. Co ciekawe, będziemy mogli oglądać wszystko z Ziemi, o ile warunki atmosferyczne będą oczywiście sprzyjające!</p>
+            <p>Zjawisko, jakim jest Koniunkcja planet Układu Słonecznego to wynik względnego położenia planet na ich orbitach wokół Słońca. Daje to złudzenie, że odległości między nimi nie są duże, a my widzimy je w jednej linii. Koniunkcja planet Układu Słonecznego będzie na naszym niebie widoczna 3 czerwca 2024. Na niebie widoczne będą w jednej linii Merkury, Mars, Jowisz, Saturn, Uran i Neptun. Urana i Neptuna będzie można zobaczyć przez lornetkę. Wenus nie będzie widoczna. Merkurego i Jowisza możemy wypatrywać w gwiazdozbiorze Byka, Marsa w gwiazdozbiorze Ryb, a Saturna w Wodniku.</p>
+            <p>Jak informuje NASA, wyrównanie planet będzie widoczne z półkuli północnej na wschodnim i południowo-wschodnim niebie. Tymczasem najlepsze warunki do obserwacji wystąpią na godzinę przed wschodem Słońca.</p>
+            <div class="countdown" id="countdown2"></div>
+        </div>
+
+        <div class="event">
+            <h2>12-08-2024: Noc Spadających Gwiazd</h2>
+            <img src="https://example.com/perseids.jpg" alt="Perseids">
+            <p>Noc Spadających Gwiazd, jedno z najciekawszych i najbardziej wyczekiwanych sierpniowych zjawisk na niebie. To coroczne święto wszystkich wielbicieli astronomii w Polsce i nie tylko.</p>
+            <p>Perseidy to jeden z najbardziej regularnych rojów meteorów, którego orbita przecina się co roku z ziemską w terminie między 17 lipca – 24 sierpnia. Rój związany jest z kometą 109P/Swift-Tuttle. Największą aktywność meteorów będzie można podziwiać na niebie w nocy z 12 sierpnia na 13 sierpnia, przed świtem. W szczycie możemy się spodziewać nawet na 60 meteorów na godzinę. To zjawisko świetlne zachodzi w górnych partiach atmosfery, na skutek przelotu przez nią z dużą prędkością (dochodzącą do nawet 72 km/s) drobin materii. Meteory widoczne są na całym niebie, ale z powodu parametrów orbity komety Swifta-Tuttle’a perseidy najlepiej obserwować na półkuli północnej. Największe prawdopodobieństwo ładnych, jasnych zjawisk jest w drugiej części nocy, kiedy to gwiazdozbiór Perseusza, czyli miejsce skąd wydają się wylatywać te meteory, jest wysoko nad horyzontem, w północno wschodniej części nieboskłonu.</p>
+            <div class="countdown" id="countdown3"></div>
+        </div>
     </div>
 
     <script>
-        function startCountdown() {
-            const datetimeInput = document.getElementById('datetime-picker').value;
-            const countdownElement = document.getElementById('countdown');
-            const targetDate = new Date(datetimeInput);
-
-            if (isNaN(targetDate)) {
-                countdownElement.innerHTML = 'Nieprawidłowa data i godzina';
-                return;
-            }
+        function startCountdown(dateString, elementId) {
+            const targetDate = new Date(dateString);
+            const countdownElement = document.getElementById(elementId);
 
             const updateCountdown = () => {
                 const now = new Date();
                 const timeRemaining = targetDate - now;
 
                 if (timeRemaining <= 0) {
-                    countdownElement.innerHTML = 'Odliczanie zakończone!';
-                    clearInterval(interval);
+                    countdownElement.innerHTML = 'Wydarzenie już się odbyło!';
                     return;
                 }
 
@@ -70,8 +104,13 @@
             };
 
             updateCountdown();
-            const interval = setInterval(updateCountdown, 1000);
+            setInterval(updateCountdown, 1000);
         }
+
+        startCountdown('2024-09-04T00:00:00', 'countdown1');
+        startCountdown('2024-06-03T00:00:00', 'countdown2');
+        startCountdown('2024-08-12T00:00:00', 'countdown3');
     </script>
 </body>
 </html>
+
